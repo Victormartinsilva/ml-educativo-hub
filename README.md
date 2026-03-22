@@ -1,7 +1,9 @@
 # 🧠 ML Educativo — Hub da Série
 
 Landing page unificando os 6 projetos da série **ML Educativo**.
+
 https://ml-educativo-app-tskeygq4pc4sp8yendcrke.streamlit.app/ 
+
 <img width="1905" height="863" alt="image" src="https://github.com/user-attachments/assets/66f758df-fd36-4131-899b-1dec4f52c2e1" />
 
 ## Deploy
