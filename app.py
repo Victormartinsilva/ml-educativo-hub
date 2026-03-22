@@ -535,36 +535,21 @@ for row_start in range(0, len(PROJECTS), 3):
             tags_html  = "".join(f'<span class="ptag">{t}</span>' for t in p["tags"])
             repo_url   = p["url"]
 
-            st.markdown(f"""
-            <div class="pcard" style="border-color:{c}22">
-
-                <div style="position:absolute;top:0;left:0;right:0;height:3px;
-                            background:linear-gradient(90deg,{c},{c}44)"></div>
-
-                <div class="pcard-num mono" style="color:{c}88">PROJETO {p['num']}</div>
-                <div class="pcard-icon">{p['icon']}</div>
-                <div class="pcard-title">{p['title']}</div>
-                <div class="pcard-concept" style="background:{concept_bg};color:{c};
-                     border:1px solid {c}44">{p['concept']}</div>
-
-                <div class="pcard-desc">{p['desc']}</div>
-                <div class="pcard-tags">{tags_html}</div>
-
-                <div class="pcard-formula" style="border-color:{c};color:{c}bb">
-                    {p['formula']}
-                </div>
-
-                <div style="font-size:.78rem;color:{c};font-style:italic;margin-bottom:1rem">
-                    "{p['one_line']}"
-                </div>
-
-                <a href="{repo_url}" target="_blank"
-                   class="pcard-link"
-                   style="color:{c};border-color:{c}44;background:{concept_bg}">
-                    ↗ Ver projeto
-                </a>
-            </div>
-            """, unsafe_allow_html=True)
+            html = (
+f'<div class="pcard" style="border-color:{c}22">'
+f'<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,{c},{c}44)"></div>'
+f'<div class="pcard-num mono" style="color:{c}88">PROJETO {p["num"]}</div>'
+f'<div class="pcard-icon">{p["icon"]}</div>'
+f'<div class="pcard-title">{p["title"]}</div>'
+f'<div class="pcard-concept" style="background:{concept_bg};color:{c};border:1px solid {c}44">{p["concept"]}</div>'
+f'<div class="pcard-desc">{p["desc"]}</div>'
+f'<div class="pcard-tags">{tags_html}</div>'
+f'<div class="pcard-formula" style="border-color:{c};color:{c}bb">{p["formula"]}</div>'
+f'<div style="font-size:.78rem;color:{c};font-style:italic;margin-bottom:1rem">"{p["one_line"]}"</div>'
+f'<a href="{repo_url}" target="_blank" class="pcard-link" style="color:{c};border-color:{c}44;background:{concept_bg}">↗ Ver projeto</a>'
+f'</div>'
+            )
+            st.markdown(html, unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
